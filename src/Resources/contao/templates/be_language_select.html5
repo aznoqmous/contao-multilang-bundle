@@ -1,0 +1,13 @@
+<select name="lang" class="tl_select" <?= $this->submitOnChange ? 'onchange="this.parentElement.submit()"' : '' ?>>
+    <?php foreach (\Aznoqmous\ContaoMultilangBundle\Multilang\Multilang::getLanguages() as $language): ?>
+        <option
+                value="<?= $language->key ?>"
+            <?= $this->activeLanguage->key === $language->key ? "selected" : "" ?>
+        >
+            <?= $language->label ?>
+        </option>
+    <?php endforeach; ?>
+</select>
+<?php if ($this->hiddenFields) foreach ($this->hiddenFields as $name => $value): ?>
+    <input type="hidden" name="<?= $name ?>" value="<?= $value ?>">
+<?php endforeach; ?>

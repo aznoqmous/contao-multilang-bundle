@@ -1,0 +1,176 @@
+.be_lang_selection_wizard .selected-languages {
+  margin-bottom: 1rem;
+}
+.be_lang_selection_wizard .selected-languages [data-lang] .add, .be_lang_selection_wizard .selected-languages [data-lang]:first-child .default {
+  display: none;
+}
+.be_lang_selection_wizard .available-languages {
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+.be_lang_selection_wizard .available-languages [data-lang] .remove,
+.be_lang_selection_wizard .available-languages [data-lang] .default {
+  display: none;
+}
+.be_lang_selection_wizard [data-lang] {
+  display: flex;
+  padding: 0.4rem 0.6rem;
+}
+.be_lang_selection_wizard [data-lang]:nth-child(odd) {
+  background: #f6f6f6;
+}
+.be_lang_selection_wizard [data-lang]:hover {
+  background: #efefef;
+  font-weight: bold;
+}
+.be_lang_selection_wizard [data-lang] > img {
+  margin-right: 1rem;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+.be_lang_selection_wizard [data-lang] .label {
+  margin-right: auto;
+}
+.be_lang_selection_wizard [data-lang] .add, .be_lang_selection_wizard [data-lang] .remove, .be_lang_selection_wizard [data-lang] .default {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.be_multilang_tables_wizard .apply-lang {
+  display: flex;
+  align-items: center;
+}
+.be_multilang_tables_wizard .apply-lang .tl_submit {
+  display: block;
+  white-space: nowrap;
+}
+.be_multilang_tables_wizard .table-container {
+  max-height: 20rem;
+  display: block;
+  overflow-y: auto;
+}
+.be_multilang_tables_wizard .table-container table {
+  width: 100%;
+}
+.be_multilang_tables_wizard .table-container table tr:nth-of-type(odd) {
+  background: #f6f6f6;
+}
+.be_multilang_tables_wizard .table-container table tr td, .be_multilang_tables_wizard .table-container table tr th {
+  padding: 0.5rem;
+}
+
+.be_language_flags_switcher {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0.5rem;
+}
+.be_language_flags_switcher li {
+  position: relative;
+}
+.be_language_flags_switcher li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.be_language_flags_switcher li a {
+  border-radius: 5px;
+}
+.be_language_flags_switcher li.reference a {
+  background: #dddddd;
+}
+.be_language_flags_switcher li.undefined {
+  filter: grayscale(1);
+}
+.be_language_flags_switcher li.undefined:after {
+  content: "";
+  background: url("/system/themes/flexible/icons/copy.svg");
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 1rem;
+  width: 1rem;
+  transform: scale(0.8) translate(0, -20%);
+  pointer-events: none;
+}
+.be_language_flags_switcher li:hover, .be_language_flags_switcher li.active {
+  filter: grayscale(0);
+}
+.be_language_flags_switcher li:hover a, .be_language_flags_switcher li.active a {
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.multilang_hidden legend {
+  display: flex;
+}
+.multilang_hidden legend img {
+  object-fit: contain;
+}
+
+.table-lang-variant {
+  display: inline-block;
+  margin-right: 0.6rem;
+}
+.table-lang-variant a {
+  display: block;
+  position: relative;
+  width: 1rem;
+  height: 0.9rem;
+  margin-top: -0.2rem;
+}
+.table-lang-variant a:before {
+  content: "";
+  background: url(/system/themes/flexible/icons/edit.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.table-lang-variant a img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 1rem;
+  width: 1rem;
+  transform: scale(0.8) translate(50%, 30%);
+  object-fit: contain;
+}
+.table-lang-variant.create {
+  filter: grayscale(1);
+}
+.table-lang-variant.create:hover {
+  filter: grayscale(0);
+}
+.table-lang-variant.create a:before {
+  background: url(/system/themes/flexible/icons/copy.svg);
+}
+
+.tiny {
+  display: inline-block;
+  margin-top: 0.1em;
+  margin-right: 0.2em;
+  height: 20px;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+}
+
+.multilang_actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.multilang_actions > form {
+  margin-left: 0.3rem;
+}

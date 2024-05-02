@@ -1,0 +1,53 @@
+.be_language_flags_switcher {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0.5rem;
+
+  li {
+    position: relative;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin: 0.2rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    a {
+      border-radius: 5px;
+    }
+
+    &.reference {
+      a {
+        background: $color_gray;
+      }
+    }
+
+    &.undefined {
+      filter: grayscale(1);
+      &:after {
+        content:"";
+        background: url("/system/themes/flexible/icons/copy.svg");
+        font-weight: bold;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1rem;
+        width: 1rem;
+        transform: scale(0.8) translate(0, -20%);
+        pointer-events: none;
+      }
+    }
+
+    &:hover, &.active {
+      filter: grayscale(0);
+      a {
+        background: white;
+        box-shadow: 0 1px 4px rgb(0 0 0 / 5%)
+      }
+    }
+  }
+}

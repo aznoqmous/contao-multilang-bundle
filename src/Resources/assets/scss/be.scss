@@ -1,0 +1,23 @@
+@import "abstract/variables";
+@import "backend/language-selection";
+@import "backend/multilang-tables";
+@import "backend/language-flags-switcher";
+@import "backend/multilang-hidden";
+@import "backend/table-variants";
+
+.tiny {
+  display: inline-block;
+  margin-top: 0.1em;
+  margin-right: 0.2em;
+  height: 20px;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+}
+
+.multilang_actions {
+  display: flex;
+  justify-content: flex-end;
+  > form {
+    margin-left: 0.3rem;
+  }
+}

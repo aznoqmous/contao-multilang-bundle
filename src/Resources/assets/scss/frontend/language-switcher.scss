@@ -1,0 +1,33 @@
+.mod_multilang_lang_select {
+  .select {
+    cursor: pointer;
+    .option {
+      padding: 0.5rem 1rem;
+    }
+    .selected {
+      position: relative;
+      padding-right: 2rem;
+      &:after {
+        content: ">";
+        position: absolute;
+        right: 0.7em;
+        transform: scaleX(1.7) rotate(90deg);
+      }
+    }
+    .options {
+      display: none;
+      flex-direction: column;
+      .option {
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+    &.active {
+      .options {
+        display: flex;
+      }
+    }
+
+  }
+}

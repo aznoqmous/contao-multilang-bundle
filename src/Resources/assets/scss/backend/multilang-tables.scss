@@ -1,0 +1,30 @@
+.be_multilang_tables_wizard {
+  .apply-lang {
+    display: flex;
+    align-items: center;
+    .tl_submit {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+
+  .table-container {
+    max-height: 20rem;
+    display: block;
+    overflow-y: auto;
+
+    table {
+      width: 100%;
+
+      tr {
+        &:nth-of-type(odd) {
+          background: $color_light;
+        }
+
+        td, th {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}

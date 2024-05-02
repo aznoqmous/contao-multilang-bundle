@@ -1,0 +1,46 @@
+<?php
+
+use Aznoqmous\ContaoMultilangBundle\Multilang\Multilang;
+
+?>
+<div class="be_lang_selection_wizard">
+    <h3><?= $this->generateLabel() ?></h3>
+    <ul class="selected-languages">
+        <?php foreach ($this->selectedLanguages as $language): ?>
+            <li data-lang="<?= $language->key ?>">
+                <img src="<?= $language->getImagePath() ?>" title="<?= $language->label ?>">
+                <span class="label"><?= $language->label ?> (<?= $language->key ?>)</span>
+                <span class="default">
+                    <img src="system/themes/flexible/icons/collapse.svg" width="14" height="14"
+                         title="Définir comme langue par défaut">
+                </span>
+                <span class="add">
+                    <img src="system/themes/flexible/icons/copy.svg" width="16" height="16" title="Ajouter">
+                </span>
+                <span class="remove">
+                    <img src="system/themes/flexible/icons/delete.svg" width="16" height="16" title="Supprimer">
+                </span>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <input type="text" class="tl_text" placeholder="Rechercher...">
+    <ul class="available-languages">
+        <?php foreach ($this->availableLanguages as $language): ?>
+            <li data-lang="<?= $language->key ?>">
+                <img src="<?= $language->getImagePath() ?>" title="<?= $language->label ?>">
+                <span class="label"><?= $language->label ?> (<?= $language->key ?>)</span>
+                <span class="default">
+                    <img src="system/themes/flexible/icons/collapse.svg" width="14" height="14"
+                         title="Définir comme langue par défaut">
+                </span>
+                <span class="add">
+                    <img src="system/themes/flexible/icons/copy.svg" width="16" height="16" title="Ajouter">
+                </span>
+                <span class="remove">
+                    <img src="system/themes/flexible/icons/delete.svg" width="16" height="16" title="Supprimer">
+                </span>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <input name="languages" type="hidden" value="<?= $this->varValue ?>">
+</div>

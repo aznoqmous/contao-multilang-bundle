@@ -1,0 +1,10 @@
+<?php if($this->id): ?>
+<form action="/api/multilang/parentCopy" method="POST" class="be_copy_parent_content" >
+    <input type="hidden" name="redirectUrl" value="<?= $_SERVER['REQUEST_URI'] ?>">
+    <input type="hidden" name="table" value="<?= $this->table ?>">
+    <input type="hidden" name="id" value="<?= $this->id ?>">
+    <button class="tl_submit" type="submit">
+        Copier le contenu parent
+    </button>
+</form>
+<?php endif; ?>

@@ -1,0 +1,64 @@
+.be_lang_selection_wizard {
+
+  .selected-languages {
+    margin-bottom: 1rem;
+
+    [data-lang] {
+      .add, &:first-child .default {
+        display: none;
+      }
+    }
+  }
+
+  .available-languages {
+    max-height: 20rem;
+    overflow-y: scroll;
+    [data-lang] {
+      .remove,
+      .default {
+        display: none;
+      }
+    }
+  }
+
+  [data-lang] {
+    display: flex;
+    padding: 0.4rem 0.6rem;
+
+    &:nth-child(odd) {
+      background: #f6f6f6;
+    }
+    &:hover {
+      background: #efefef;
+      font-weight: bold;
+    }
+
+    > img {
+      margin-right: 1rem;
+      width: 1rem;
+      height: 1rem;
+      object-fit: contain;
+    }
+
+    .label {
+      margin-right: auto;
+    }
+
+    .add, .remove, .default {
+      display: flex;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+
+    .add {
+    }
+
+    .remove {
+    }
+
+    .default {
+    }
+  }
+}

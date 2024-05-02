@@ -1,0 +1,16 @@
+<?php if($_GET['act'] != 'editAll') :?>
+<form action="/contao?<?= $this->action ?>" method="POST" class="be_edit_all">
+    <?php foreach ($this->hiddenFields as $name => $value): ?>
+        <?php if (is_array($value)): ?>
+            <?php foreach ($value as $v): ?>
+                <input type="hidden" name="<?= $name ?>" value="<?= $v ?>">
+            <?php endforeach; ?>
+        <?php else: ?>
+            <input type="hidden" name="<?= $name ?>" value="<?= $value ?>">
+        <?php endif; ?>
+    <?php endforeach; ?>
+    <button class="tl_submit" type="submit">
+        Edition multiple
+    </button>
+</form>
+<?php endif; ?>

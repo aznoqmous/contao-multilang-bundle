@@ -1,0 +1,11 @@
+<ul class="be_language_flags_switcher">
+    <?php use Aznoqmous\ContaoMultilangBundle\Multilang\Multilang;
+
+    foreach (Multilang::getLanguages() as $language): ?>
+        <li class="<?= $language->key == $this->referenceLang ? "reference " : "" ?><?= $language->key == Multilang::getActiveLanguageKey() ? "active " : "" ?><?= ($_GET['act'] == 'edit' && !in_array($language->key, $this->existingLangs))? "undefined" : ""; ?>">
+            <a href="<?= $_SERVER['REQUEST_URI']?>&lang=<?= $language->key ?>" title="<?= $language->label ?><?= $language->key == $this->referenceLang ? " - Langue de référence" : "" ?><?= ($_GET['act'] == 'edit' && !in_array($language->key, $this->existingLangs))? " - Créer une traduction" : ""; ?>">
+                <img src="<?= $language->getImagePath() ?>">
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>

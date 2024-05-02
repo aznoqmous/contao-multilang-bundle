@@ -1,0 +1,53 @@
+<div class="be_multilang_tables_wizard">
+
+    <div class="widget" data-table>
+        <h3>Global</h3>
+        <?php if (!$this->totalMissingEntities): ?>
+        <p class="tl_confirm">
+            Toutes les entités ont des languages attribués
+        </p>
+        <?php else: ?>
+            <span><?= $this->totalMissingEntities ?> entités sans langue attribuée</span>
+            <div class="apply-lang">
+                <?= \Aznoqmous\ContaoMultilangBundle\Multilang\BackendMultilang::renderLanguageSelect(false) ?>
+                <span class="tl_submit">
+                Appliquer la langue
+            </span>
+            </div>
+        <?php endif; ?>
+    </div>
+    <?php foreach ($this->tables as $table): ?>
+        <div class="widget" data-table="<?= $table->table ?>">
+            <h3><?= $table->label ? $table->label . " - " : "" ?><?= $table->table ?></h3>
+            <?php if (!$table->missingLanguageEntities): ?>
+                <p class="tl_confirm">
+                    Toutes les entités ont des languages attribués
+                </p>
+            <?php else: ?>
+                <span><?= $table->missingLanguageEntities->count() ?> entités sans langue attribuée</span>
+                <div class="apply-lang">
+                    <?= \Aznoqmous\ContaoMultilangBundle\Multilang\BackendMultilang::renderLanguageSelect(false) ?>
+                    <span class="tl_submit">
+                        Appliquer la langue
+                    </span>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <?php foreach ($table->fields as $field): ?>
+                                <th><?= $field ?></th>
+                            <?php endforeach; ?>
+                        </tr>
+                        <?php foreach ($table->missingLanguageEntities as $model): ?>
+                            <tr>
+                                <?php foreach ($table->fields as $field): ?>
+                                    <td><?= $model->{$field} ?></td>
+                                <?php endforeach; ?>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>

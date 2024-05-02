@@ -1,0 +1,24 @@
+<form class="mod_multilang_lang_select" method="post">
+    <div class="select">
+        <span class="selected option">
+            <?= $this->switcherLayout == "name" ? "<span>{$this->activeLanguage->nativeLabel}</span>" : "" ?>
+            <?= $this->switcherLayout == "key" ? "<span>" . strtoupper($this->activeLanguage->key) . "</span>" : "" ?>
+            <?= $this->switcherLayout == "flag" ? $this->activeLanguage->getFlagImage() : "" ?>
+            <?= $this->switcherLayout == "flagName" ? "{$this->activeLanguage->getFlagImage()}<span>{$this->activeLanguage->nativeLabel}</span>" : "" ?>
+        </span>
+        <ul class="options">
+            <?php foreach ($this->languages as $lang): ?>
+                <?php if($this->activeLanguage->key == $lang->key) continue; ?>
+                <li class="option" data-value="<?= $lang->key ?>" <?= $this->activeLanguage->key == $lang->key ? 'class="active"' : ''?>>
+                    <?= $this->switcherLayout == "name" ? "<span>{$lang->nativeLabel}</span>" : "" ?>
+                    <?= $this->switcherLayout == "key" ? "<span>" . strtoupper($lang->key) . "</span>" : "" ?>
+                    <?= $this->switcherLayout == "flag" ? $lang->getFlagImage() : "" ?>
+                    <?= $this->switcherLayout == "flagName" ? "{$lang->getFlagImage()}<span>{$lang->nativeLabel}</span>" : "" ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <input type="hidden" name="lang_select" value="">
+    <input type="hidden" name="changeLang" value="true">
+    <input type="hidden" name="REQUEST_TOKEN" value="<?= REQUEST_TOKEN ?>">
+</form>

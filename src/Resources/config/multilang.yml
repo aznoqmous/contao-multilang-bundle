@@ -1,0 +1,22 @@
+deepl_api_url: https://api-free.deepl.com/v2/translate
+deepl_api_key: YOUR_API_KEY
+aliasFields:
+  - title
+  - name
+languages:
+  - de
+  - en
+  - zh
+  - es
+  - fr
+  - nl
+  - it
+  - ja
+  - lv
+  - pl
+  - pt
+  - ru
+  - sr
+  - sl
+  - sv
+  - cs

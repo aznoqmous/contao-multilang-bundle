@@ -1,0 +1,22 @@
+<?php
+
+use Aznoqmous\ContaoMultilangBundle\Multilang\Multilang;
+
+?>
+    <select name="lang" class="tl_select" <?= $this->submitOnChange ? 'onchange="this.parentElement.submit()"' : '' ?>>
+    <?php foreach (Multilang::getLanguages() as $language): ?>
+        <option
+                value="<?= $language->key ?>"
+            <?= $this->activeLanguage->key === $language->key ? "selected" : "" ?>
+        >
+            <?php if ($_GET['act'] != 'edit' || in_array($language->key, $this->existingLangs)): ?>
+                <?= $language->label ?>
+            <?php else: ?>
+                <?= $language->label ?> - Créer une traduction
+            <?php endif; ?>
+        </option>
+    <?php endforeach; ?>
+</select>
+<?php if ($this->hiddenFields) foreach ($this->hiddenFields as $name => $value): ?>
+    <input type="hidden" name="<?= $name ?>" value="<?= $value ?>">
+<?php endforeach; ?>

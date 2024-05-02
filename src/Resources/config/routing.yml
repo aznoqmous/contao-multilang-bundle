@@ -1,0 +1,3 @@
+multilang_api:
+  resource: "@ContaoMultilangBundle/Controller/MultilangController.php"
+  type: annotation

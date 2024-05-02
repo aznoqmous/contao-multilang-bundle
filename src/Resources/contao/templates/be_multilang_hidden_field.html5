@@ -1,0 +1,8 @@
+<div class="multilang_hidden">
+    <input type='hidden' name='<?= $this->name ?>' value='<?= $this->varValue ?>'>
+    <legend>
+        <img src="<?= $this->language->getImagePath() ?>">
+        &nbsp;
+        <?= $this->language->label ?>
+    </legend>
+</div>
